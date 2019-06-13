@@ -35,8 +35,8 @@ namespace Fastmap.TileGenerator
             if (_jobs == null)
             {
                 _jobs = new List<JobModel>();                
-                _jobs.Add(new Models.JobModel(106.000000, 10.000000, 107.000000, 11.000000, fromLevel: 0, toLevel: 10));
-                _jobs.Add(new Models.JobModel(106.000000, 10.000000, 107.000000, 11.000000, fromLevel: 0, toLevel: 18));
+                _jobs.Add(new Models.JobModel(106.123456, 10.000123, 106.123456, 10.000123, fromLevel: 0, toLevel: 10));
+                _jobs.Add(new Models.JobModel(106.000000, 10.000000, 106.123456, 11.000000, fromLevel: 11, toLevel: 18));
             }
             #endregion
         }

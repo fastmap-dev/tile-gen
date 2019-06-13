@@ -16,9 +16,9 @@ namespace Fastmap.TileGenerator.Models
 
         public JobModel(double lon1, double lat1, double lon2, double lat2, int fromLevel, int toLevel)
         {
-            Name = $"Job: [{lon1},{lat1}] => [{lon2},{lat2}], level: [{fromLevel}, {toLevel}]";
+            Name = $"Job: [{lon1}, {lat1}] .. [{lon2}, {lat2}] level: [{fromLevel}..{toLevel}]";
             JobLevels = new List<JobLevelModel>();
-            for(var level = fromLevel;level < toLevel; level++)
+            for(var level = fromLevel;level <= toLevel; level++)
             {
                 AppContext.LonLatToTile(lon1, lat1, level, out var tile1x, out var tile1y);
                 AppContext.LonLatToTile(lon2, lat2, level, out var tile2x, out var tile2y);
@@ -83,7 +83,7 @@ namespace Fastmap.TileGenerator.Models
 
         internal decimal GetCompletedTileCount()
         {
-            return (CurrentX - X) * Height + CurrentY;
+            return (CurrentX - X) * Height + (CurrentY - Y);
         }
 
         internal decimal GetTileCount()
