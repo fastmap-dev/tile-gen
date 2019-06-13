@@ -1,0 +1,14 @@
+﻿@page
+@model Fastmap.TileGenerator.Pages.JobsModel
+@{
+    ViewData["Title"] = "Jobs";
+}
+
+<h1>Jobs</h1>
+
+<ul>
+    @foreach (var item in Model.Jobs)
+    {
+        <li>@item.Name  @(item.Completed?"Completed":(item.GetJobPercentage() * 100).ToString("#.00") + "%")</li>
+    }
+</ul>
